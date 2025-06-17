@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Le Random Newz</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        
+        header {
+            background-color: #acaffe;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        header h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 5em;
+            margin: 0;
+        }
+
+        .date {
+            font-size: 1.2em;
+            color: #e6e7f2;
+        }
+
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            display: grid;
+            gap: 20px;
+        }
+
+        /* Search Bar Styling */
+        .search-bar {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .search-bar input {
+            width: 50%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 1em;
+        }
+
+        .side-by-side {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .writers-ad, .fact-box {
+            font-family: Arial, sans-serif;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .writers-ad {
+            background-color: #dfd7f5;
+            color: #333;
+            text-align: center;
+        }
+
+        .fact-box {
+            background-color: #d7e4f5;
+            color: #333;
+            text-align: center;
+        }
+
+        .articles-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .article {
+            background-color: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        h2 {
+            font-family: Arial, sans-serif;
+            color: #333;
+        }
+
+        .timestamp {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            font-size: 0.9em;
+            color: #888;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        /* Media Query for Mobile Devices */
+        @media (max-width: 768px) {
+            .container {
+                width: 90%;
+            }
+
+            .side-by-side {
+                grid-template-columns: 1fr; /* Stack the ad and fact box on smaller screens */
+            }
+
+            .articles-grid {
+                grid-template-columns: 1fr; /* Single column for articles on smaller screens */
+            }
+
+            header h1 {
+                font-size: 2.5em;
+            }
+
+            h2 {
+                font-size: 1.5em;
+            }
+
+            .fact-box, .writers-ad {
+                font-size: 0.9em;
+                padding: 10px;
+            }
+
+            .article {
+                padding: 10px;
+            }
+
+            footer {
+                padding: 15px 0;
+            }
+        }
+
+        /* Media Query for Very Small Screens */
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 2em;
+            }
+
+            h2 {
+                font-size: 1.3em;
+            }
+
+            .fact-box, .writers-ad {
+                font-size: 0.8em;
+                padding: 8px;
+            }
+
+            .article {
+                padding: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Le Random Newz</h1>
+    <div class="date" id="current-date"></div>
+</header>
+
+<div class="container">
+
+    <!-- Search Bar -->
+    <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="Search articles..." onkeyup="searchArticles()">
+    </div>
+
+    <!-- Writers Ad and Fact Box Side by Side -->
+    <div class="side-by-side">
+        <div class="writers-ad">
+            <h3>Writers Needed!</h3>
+            <p>If you’re interested, you, yes you, can apply to write some articles for this news site.</p>
+            <p>Contact us in <strong>Le Random Squad 2.0</strong> if you’re interested.</p>
+        </div>
+
+        <div class="fact-box">
+            <h3>This Week's Fact</h3>
+            <p>Mahreen nearly went insane while trying to make this website...</p>
+        </div>
+    </div>
+
+    <!-- Articles Grid -->
+
+
+        <div class="article" data-timestamp="2024-10-12T23:20:00" data-title="Tasfia & Zannat have a future ahead of them!">
+            <h2>Tasfia & Zannat have a future ahead of them!</h2>
+            <p>Tasfia Akter Anha and Zannatul Fredous Chowdhury have been known as "weirdos" and "furries" by their classmates.</p>
+            <p>Zannatul (Or Zannat, as referred to by her classmates) draws furry art for fun in a spare notebook during lectures. Once, when Sumaila asked to see her drawings, Zannat responded with "You're not my friend so you can't see it sumahaila hahaha"</p>
+            <p>Tasfia, on the other hand, draws furries on the back of worksheets, resulting in a lot more trouble for her. She has been known to draw furry versions of her classmates, some naked, others wearing undergarments.</p>
+            <p>Needless to say, it is easy to assume that they don't have a very bright future ahead of them.</p>
+            <p>However, recently, a new website named furryart.com has come into the spotlight for paying artists $70,000 per 10 drawings. Now, this leaves us to speculate that, theoretically, Tasfia and Zannat could make a living off of that, and their futures aren't so bleak after all</p>
+            <p>Whether this is a good thing or not, we'll leave you, the reader, to decide.</p>
+            <div class="timestamp"></div>
+        </div>
+ 
+       <div class="article" data-timestamp="2024-10-12T21:50:00" data-title="Adrija's Haerin obsession: The beginning of another phase?">
+            <h2>Adrija's Haerin obsession: The beginning of another phase?</h2>
+            <p>Adrija Adwitiya, 12, now has another obsession of Kang Haerin, 18. Old readers may remember the past two articles of her obsession with popular kpop group Newjeans and jpop artist Ado. This obsession is very much like the previous ones, perhaps a beginning of another era for Adrija? </p>
+            <p>Haerin is an 18-year-old South Korean singer, and the best known member of the popular kpop group Newjeans. </p>
+            <p>"Adrija cannot stop talking about Newjeans." Says Mahreen, 13. Another interviewee has told us that Adrija draws green cats everywhere, which are supposed to be a symbol of Haerin. She claims that her notebooks, classworks, stationery and everything are filled with the symbol of Haerin.</p>
+            <p>However, Adrija's obsession of Haerin is not necessarily a bad thing, because it makes many good memories between her and her friends.</p>
+            <p>"I'm not a fan of kpop, but its really refreshing to sing the Newjeans song with her sometimes." Says Wareesha, 11. In fact, she and her friends have made it a trend to sing the Newjeans song all the time and to have a heartfelt love for Haerin, for Adrija's sake.</p>
+            <div class="timestamp"></div>
+        </div>
+
+        <div class="article" data-timestamp="2024-10-12T12:30:00" data-title="Shrekorgy returns">
+            <h2>Shrekorgy returns</h2>
+            <p>Recent reports have emerged of a strange figure, dubbed "The Protein-Pill Phantom," wandering the streets begging on his knees for protein pills. He’s been kicked aside repeatedly—until one man found himself stalked by this mysterious figure, resulting in a bizarre hostage situation. But that’s not the strangest part—both men later contracted the “Shrekorgy” which, old readers will know, reportedly causes green discoloration in... well, unfortunate areas. </p>
+            <p><strong>Experts warn the public: BEWARE. If you encounter this beggar, don’t kick him. You might catch more than just his attention!.</strong></p>
+            <div class="timestamp"></div>
+        </div>
+
+        <div class="article" data-timestamp="2024-08-26T13:07:00" data-title="Wareesha’s “new” cat">
+            <h2>Wareesha’s “new” cat</h2>
+            <p>Those who have read last week’s paper may remember Tofu, the criminal cat, who Wareesha wanted to adopt, had gone into hiding after an illegal misadventure.</p>
+            <p>Since then, Wareesha has gotten a new cat, named Leo, who is currently a month old. “Leo” looks surprisingly similar to Tofu.</p>
+            <p>We hired some Private Investigators to find out the truth about Leo, and, in a surprising twist, it appears that Leo is actually Tofu in disguise, and the real Leo was found locked away in an old abandoned building, seemingly left there by Tofu.</p>
+            <p>We have since then arrested Tofu, and Leo, the real Leo, is currently happily living his life with Wareesha and her family, with all the toys he could ever wish for.</p>
+            <p>We will be keeping a close eye on Tofu, so that she may never kidnap another cat again.</p>
+            <div class="timestamp"></div>
+        </div>
+
+        <div class="article" data-timestamp="2024-08-26T13:07:00" data-title="Andy from Toy Story spotted in robot uprising">
+            <h2>Andy from Toy Story spotted in robot uprising</h2>
+            <p>Chaos erupted as robots took over the serene city of Venice, leaving residents terrified and confined to their homes, reports Chowdhury Wareesha Zaman, 12. Amidst this turmoil, an anonymous local claims to have seen Andy, the beloved character from Disney's Toy Story, wandering the streets. The sighting has sparked curiosity and confusion, adding a surreal twist to an already chaotic situation, leaving many wondering if there's more to this invasion than meets the eye.</p>
+            <div class="timestamp"></div>
+        </div>
+
+        <div class="article" data-timestamp="2024-08-26T13:07:00" data-title="Adrija’s New Obsession">
+            <h2>Adrija’s New Obsession</h2>
+            <p>Adrija, 12, is currently obsessed with popular K-pop girl group “NewJeans”. Older readers may remember her obsession with Ado, this NewJeans obsession is similar to the one of Ado.</p>
+            <p>The group consists of five members: Minji, Hanni, Danielle, Haerin, and Hyein. Their unique sound blends various genres, including R&B, garage, and bedroom pop, which has helped them stand out in the competitive K-pop industry.</p>
+            <p>They became instantly famous in 2022 with their debut song “Attention”, which lived up to it’s name and got quite a lot of attention.</p>
+            <p>The song was released without prior promotion, which is quite unusual for the K-pop industry</p>
+            <div class="timestamp"></div>
+        </div>
+
+
+        <div class="article" data-timestamp="2024-08-08T11:43:00" data-title="Wareesha’s cat in hiding">
+            <h2>Wareesha’s cat in hiding</h2>
+            <p>Tofu, the cat Wareesha wanted to adopt, has gone into hiding after a video was posted, showing the cat consuming gummies manufactured by a now defunct and highly illegal company. </p>
+            <p>Wareesha has been informed that Tofu "got the flu", but there are search parties looking for the cat as we speak. Wareesha, unperturbed, decided to get her tutor's friend's cat in September instead.</p>
+            <p>If you have any information about the criminal cat Tofu, please inform us.</p>
+            <div class="timestamp"></div>
+        </div>
+
+        <div class="article" data-timestamp="2024-08-08T11:43:00" data-title="New virus spreading in North Africa">
+            <h2>New virus spreading in North Africa</h2>
+            <p>A new virus is spreading in the country Niger, reports Fauzia Fatima, 12. According to her, this virus is called “Shrekorgy”.
+            <p>“So far over 100 people diagnosed with it in slum towns of Niger. The disease spreads thru toe contact when people's feet come in touch. Mostly males are getting this disease and the virus affects the toes and slowly moves up towards the wee wee.” she says. </p>
+            <p>Symptoms include: green poop, patterns of purple pentagons appearing on toenails, and becoming slightly dumber.</p>
+            <p>In severe cases it can be fatal and make you look like Shrek, hence the name “Shrekorgy”.</p>
+            <p>There are no vaccines to this virus yet, and, according to Fauzia, the only cure is to eat sea turtles and to come into contact with people who have diarrhea.</p>
+            <div class="timestamp"></div>
+        </div>
+
+        <div class="article" data-timestamp="2024-08-08T11:43:00" data-title="All She Says is Baguette">
+            <h2>All She Says is Baguette</h2>
+            <p>Chowdhury Wareesha Zaman, 11, appears to be obsessed with baguettes, a type of French bread. She frequently texts “baguette” in the middle of conversations completely unrelated to bread, leading some to wonder if Wareesha can type anything other than "baguette." Her rather silly habit amuses her friends. </p>
+            <p>“All she says is baguette” Mahreen, 12, says. </p>
+            <p>In a world where everyone is trying to fit in, Wareesha's love for baguettes is a refreshing reminder that it's okay to be a little different. Her friends have even started a playful trend, occasionally slipping "baguette" into their own conversations, creating a secret language of sorts that bonds them together. </p>
+            <p>For Wareesha, it's not just about the bread; it's about the joy, laughter and confusion it brings to those around her. And in the end, isn't that what truly matters?</p>
+            <div class="timestamp"></div>
+        </div>
+
+        <div class="article" data-timestamp="2024-08-04T00:27:00" data-title="Cat gets elected as mayor: Residents aren’t too happy about it">
+            <h2>Cat gets elected as mayor: Residents aren’t too happy about it</h2>
+            <p>In a surprising twist, Whiskers the cat has been elected mayor of Whiskerton, causing frustration among residents. The feline's victory, driven by a viral joke campaign, has raised concerns about governance and community issues.</p>
+            <p>Locals feel embarrassed and worry about the town's future, though the council promises to handle daily operations. This election highlights the unintended consequences of viral trends and the importance of taking local elections seriously.</p>
+            <div class="timestamp"></div>
+        </div>
+
+        <div class="article" data-timestamp="2024-08-04T00:27:00" data-title="Chickens take over small town">
+            <h2>Chickens take over small town</h2>
+            <p>In an eggstraordinary turn of events, the small town of Cluckingham has been overrun by hundreds of chickens, leaving residents bewildered. The feathered invaders swiftly took over the town square and even renamed the town hall the "Hen House."</p>
+            <p>Local resident Betty Featherbottom noted the organized chaos, while farmer Joe Hensley joked, "At least they’re polite; they wait for the light to cross the road." As Cluckingham adjusts to its new rulers, residents are advised to keep their birdseed stashed and embrace the pecking order.</p>
+            <div class="timestamp"></div>
+        </div>
+
+        <div class="article" data-timestamp="2024-08-04T00:27:00" data-title="Zombies spotted in Alaska">
+            <h2>Zombies spotted in Alaska</h2>
+            <p>Residents of Willow, a small town north of Anchorage, have reported seeing what they describe as zombies roaming the outskirts of their community. Witnesses describe the figures as having pale skin, vacant stares, and unsteady gaits, sparking fear and curiosity among locals. Social media is flooded with photos and videos of the eerie figures, adding to the frenzy.</p>
+            <p>Local police, inundated with calls, are investigating the reports and coordinating with state and federal authorities. While experts suggest various possible explanations, from pranks to rare medical conditions, the community remains on edge, with many businesses closing early and residents stockpiling supplies. The mystery of the Alaskan zombies continues to unfold, leaving many wondering what will come next.</p>
+            <div class="timestamp"></div>
+        </div>
+
+        <div class="article" data-timestamp="2024-08-04T00:27:00" data-title="Adrija’s Ado obsession: Has it gone too far?">
+            <h2>Adrija’s Ado obsession: Has it gone too far?</h2>
+            <p>Adrija Adwitiya, 12, is obsessed with popular Japanese singer Ado, 21. She made her debut with the digital single titled "Usseewa", which peaked at number 1 on Billboard Japan Hot 100, Oricon Digital Singles Chart, and the Oricon Streaming Chart. </p>
+            <p>Incidentally, "Usseewa" is Adrija's favorite song. The song features Ado sc  reaming about Japanese society, according to Adrija. As of now, Adrija has countless images of Ado saved in her gallery, and she sends multiple of them in the middle of conversations unrelated to her or Ado. Needless to say, Adrija’s friends are not so impressed. </p>
+            <p>"She keeps annoying us by spamming images of Ado." Mahreen, 12, says. </p>
+            <p>"I'm tired of Ado." Wareesha, 11, says.</p>
+            <div class="timestamp"></div>
+        </div>
+
+
+        <!-- Add more articles as needed -->
+    </div>
+
+</div>
+
+
+<script>
+    // Get the current date and format it
+    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    const today = new Date().toLocaleDateString(undefined, options);
+    
+    // Set the date in the HTML
+    document.getElementById('current-date').textContent = today;
+
+    // Function to calculate "time ago" string
+    function timeAgo(date) {
+        const seconds = Math.floor((new Date() - new Date(date)) / 1000);
+        const intervals = {
+            year: 31536000,
+            month: 2592000,
+            day: 86400,
+            hour: 3600,
+            minute: 60,
+        };
+
+        for (const key in intervals) {
+            const interval = Math.floor(seconds / intervals[key]);
+            if (interval > 1) {
+                return interval + ' ' + key + 's ago';
+            } else if (interval === 1) {
+                return interval + ' ' + key + ' ago';
+            }
+        }
+        return 'Just now';
+    }
+
+    // Set the "time ago" for each article
+    const articles = document.querySelectorAll('.article');
+    articles.forEach(article => {
+        const timestamp = article.getAttribute('data-timestamp');
+        const timeAgoText = timeAgo(timestamp);
+        article.querySelector('.timestamp').textContent = timeAgoText;
+    });
+
+    // Search articles function
+    function searchArticles() {
+        const input = document.getElementById('searchInput').value.toLowerCase();
+        const articles = document.querySelectorAll('.article');
+        
+        articles.forEach(article => {
+            const title = article.getAttribute('data-title').toLowerCase();
+            const content = article.querySelector('p').textContent.toLowerCase();
+            if (title.includes(input) || content.includes(input)) {
+                article.style.display = "";
+            } else {
+                article.style.display = "none";
+            }
+        });
+    }
+</script>
+
+</body>
+</html>
